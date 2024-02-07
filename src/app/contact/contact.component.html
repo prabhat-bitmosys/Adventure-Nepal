@@ -1,0 +1,189 @@
+<div class="container mt-10 mb-10">
+  <h1
+    class="text-3xl text-center mb-10"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
+    Contact Us
+  </h1>
+  <div class="form-content flex justify-center items-center gap-10">
+    <div
+      class="iframe-container"
+      data-aos="flip-left"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000"
+    >
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.31713618171!2d85.28493303280818!3d27.708954252211285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1707211971834!5m2!1sen!2snp"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+    <form
+      [formGroup]="submitForm"
+      class="w-full flex flex-col max-w-lg"
+      (ngSubmit)="onSubmit()"
+      data-aos="flip-right"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000"
+    >
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="grid-first-name"
+          >
+            First Name
+          </label>
+          <input
+            class="block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            id="grid-first-name"
+            type="text"
+            placeholder="First Name"
+            formControlName="firstName"
+          />
+          <div
+            *ngIf="
+              submitForm.controls.firstName.invalid &&
+              (submitForm.controls.firstName.dirty ||
+                submitForm.controls.firstName.touched)
+            "
+          >
+            <div
+              class="text-red-600"
+              *ngIf="submitForm.controls.firstName.errors?.['required']"
+            >
+              First Name is required.
+            </div>
+            <div
+              class="text-red-600"
+              *ngIf="submitForm.controls.firstName.errors?.['minlength']"
+            >
+              First Name must be at least 5 characters long.
+            </div>
+          </div>
+
+          <br />
+        </div>
+        <div class="w-full md:w-1/2 px-3">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="grid-last-name"
+          >
+            Last Name
+          </label>
+          <input
+            class="block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            id="grid-last-name"
+            type="text"
+            placeholder="Last Name"
+            formControlName="lastName"
+          />
+          <div
+            *ngIf="
+              submitForm.controls.lastName.invalid &&
+              (submitForm.controls.lastName.dirty ||
+                submitForm.controls.lastName.touched)
+            "
+          >
+            <div
+              class="text-red-600"
+              *ngIf="submitForm.controls.lastName.errors?.['required']"
+            >
+              Last Name is required.
+            </div>
+            <div
+              class="text-red-600"
+              *ngIf="submitForm.controls.lastName.errors?.['minlength']"
+            >
+              Last Name must be at least 3 characters long.
+            </div>
+          </div>
+
+          <br />
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="grid-email"
+          >
+            Email
+          </label>
+          <input
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-email"
+            type="email"
+            placeholder="someone@example.com"
+            formControlName="email"
+          />
+          <div
+            *ngIf="
+              submitForm.controls.email.invalid &&
+              (submitForm.controls.email.dirty ||
+                submitForm.controls.email.touched)
+            "
+          >
+            <div
+              class="text-red-600"
+              *ngIf="submitForm.controls.email.errors?.['required']"
+            >
+              Email is required.
+            </div>
+            <div
+              class="text-red-600"
+              *ngIf="submitForm.controls.email.errors?.['email']"
+            >
+              Email must be a valid email address.
+            </div>
+          </div>
+
+          <br />
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <label
+            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="grid-message"
+          >
+            Message
+          </label>
+          <textarea
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-message"
+            type="email"
+            placeholder="Enter your message here"
+            formControlName="message"
+          ></textarea>
+          <div
+            *ngIf="
+              submitForm.controls.message.dirty ||
+              submitForm.controls.message.touched
+            "
+          >
+            <div
+              class="text-red-600"
+              *ngIf="submitForm.controls.message.errors?.['required']"
+            >
+              Message is required.
+            </div>
+          </div>
+
+          <br />
+        </div>
+      </div>
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

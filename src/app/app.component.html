@@ -1,0 +1,94 @@
+<header class="navbar fixed top-0 z-50 w-full">
+  <!-- <nav class="fixed top-0 w-full bg-black text-white z-50"> -->
+  <nav class="bg-black text-white">
+    <ul class="max-w-screen-xl flex flex-wrap items-center justify-end mx-auto p-4">
+      <li>
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          class="hover:bg-emerald-200 transition ease-in-out delay-50 p-3 rounded-md md:mx-2"
+        >Home</a>
+      </li>
+      <li>
+        <a
+          routerLink="/about"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          class="hover:bg-emerald-200 transition ease-in-out delay-50 p-3 rounded-md md:mx-2"
+        >About Us</a>
+      </li>
+      <li>
+        <a
+          routerLink="/services"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          class="hover:bg-emerald-200 transition ease-in-out delay-50 p-3 rounded-md md:mx-2"
+        >Services</a>
+      </li>
+      <li>
+        <a
+          routerLink="/contact"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          class="hover:bg-emerald-200 transition ease-in-out delay-50 p-3 rounded-md md:mx-2"
+        >Contact Us</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+<!-- The routed views render in the <router-outlet>-->
+<main class="container h-screen max-w-screen-2xl">
+  <router-outlet></router-outlet>
+
+  <footer class="h-1/2 mt-10 relative flex justify-center items-center">
+    <div class="bgimage absolute inset-0 w-full">
+      <img
+        data-aos="zoom-out"
+        class="object-cover w-full h-full"
+        src="../assets/nepal-img.PNG"
+        alt="Nepal Silhouette Image"
+        loading="lazy"
+      />
+    </div>
+    <div class="links absolute text-white">
+      <ul class="flex flex-wrap gap-10 justify-center md:justify-end">
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            class="hover:bg-emerald-200 transition ease-in-out delay-50 p-3 rounded-md"
+          >Home</a>
+        </li>
+        <li>
+          <a
+            routerLink="/about"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            class="hover:bg-emerald-200 transition ease-in-out delay-50 p-3 rounded-md"
+          >About Us</a>
+        </li>
+        <li>
+          <a
+            routerLink="/services"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            class="hover:bg-emerald-200 transition ease-in-out delay-50 p-3 rounded-md"
+          >Services</a>
+        </li>
+        <li>
+          <a
+            routerLink="/contact"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            class="hover:bg-emerald-200 transition ease-in-out delay-50 p-3 rounded-md"
+          >Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+  
+</main>
